@@ -1,18 +1,18 @@
-<#-- @ftlvariable name="articles" type="kotlin.collections.List<com.example.models.Article>" -->
+<#-- @ftlvariable name="books" type="kotlin.collections.List<com.booktrack.models.Book>" -->
 <#import "_layout.ftl" as layout />
 <@layout.header>
-    <#list articles?reverse as article>
+    <#list books?reverse as book>
         <div>
-            <h3>
-                <a href="/articles/${article.id}">${article.title}</a>
-            </h3>
-            <p>
-                ${article.body}
-            </p>
+            <img height="300px" src="${book.cover}" alt="">
+            <h3> ${book.title} </h3>
+            <p> ${book.author} </p>
+            <p> Página ${book.currentPage} </p>
+
+            <p> <a href="/booktrack/${book.id}/edit">Editar livro</a> </p>
         </div>
     </#list>
     <hr>
     <p>
-        <a href="/articles/new">Create article</a>
+        <a href="/booktrack/new">Adicionar novo livro</a>
     </p>
 </@layout.header>
