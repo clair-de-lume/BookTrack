@@ -17,7 +17,7 @@
                 <input type="text" name="cover" value="${book.cover}">
             </p>
             <p>
-                <input type="radio" name="isPage" value="Página" required>
+                <input type="radio" name="isPage" value="Página" required checked>
                 <label for="isPage">Página</label>
                 <input type="radio" name="isPage" value="Capítulo" required>
                 <label for="isPage">Capítulo</label>
@@ -25,6 +25,12 @@
             <p>
                 <label for="currentPage">Página/Capítulo atual:</label>
                 <input type="number" name="currentPage" value="${book.currentPage}" required>
+            </p>
+            <p> Lido?
+                <input type="radio" name="finished" value="false" required checked>
+                <label for="finished">Não</label>
+                <input type="radio" name="finished" value="true" required>
+                <label for="finished">Sim</label>
             </p>
             <p>
                 <input type="submit" name="_action" value="update">
