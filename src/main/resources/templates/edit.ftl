@@ -6,7 +6,7 @@
         <form action="/booktrack/${book.id}" method="post">
             <p>
                 <label for="title">Título:</label>
-                <input type="text" name="title" value="${book.title}">
+                <input type="text" name="title" value="${book.title}" required>
             </p>
             <p>
                 <label for="author">Autor:</label>
@@ -17,8 +17,14 @@
                 <input type="text" name="cover" value="${book.cover}">
             </p>
             <p>
-                <label for="currentPage">Páginal atual:</label>
-                <input type="number" name="currentPage" value="${book.currentPage}">
+                <input type="radio" name="isPage" value="Página" required>
+                <label for="isPage">Página</label>
+                <input type="radio" name="isPage" value="Capítulo" required>
+                <label for="isPage">Capítulo</label>
+            </p>
+            <p>
+                <label for="currentPage">Página/Capítulo atual:</label>
+                <input type="number" name="currentPage" value="${book.currentPage}" required>
             </p>
             <p>
                 <input type="submit" name="_action" value="update">

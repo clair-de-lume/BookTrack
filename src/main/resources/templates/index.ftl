@@ -6,7 +6,7 @@
             <img height="300px" src="${book.cover}" alt="">
             <h3> ${book.title} </h3>
             <p> ${book.author} </p>
-            <p> Página ${book.currentPage} </p>
+            <p> ${book.isPage()} ${book.currentPage} </p>
 
             <p> <a href="/booktrack/${book.id}/edit">Editar livro</a> </p>
         </div>

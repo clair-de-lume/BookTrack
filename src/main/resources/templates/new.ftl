@@ -16,7 +16,13 @@
                 <input type="text" name="cover">
             </p>
             <p>
-                <label for="currentPage">Páginal atual:</label>
+                <input type="radio" name="isPage" value="Página">
+                <label for="isPage">Página</label>
+                <input type="radio" name="isPage" value="Capítulo">
+                <label for="isPage">Capítulo</label>
+            </p>
+            <p>
+                <label for="currentPage">Página/Capítulo atual:</label>
                 <input type="number" name="currentPage">
             </p>
             <p>
