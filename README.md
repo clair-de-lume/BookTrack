@@ -1,7 +1,7 @@
-# Projeto de Acompanhamento de Progresso de Livros
+# BookTrack
 
 ## Descrição do Projeto
-Este projeto é desenvolvido como parte do curso de MAC0350 ministrada em 2024.1. O objetivo é criar uma aplicação web que permita aos usuários acompanhar seu progresso de leitura de livros, registrar os livros que estão lendo, já leram ou desejam ler.
+BookTrack tem como objetivo criar uma aplicação web que permita aos usuários acompanhar seu progresso de leitura de livros, registrar os livros que estão lendo, já leram ou desejam ler. Esse projeto é desenvolvido como parte do curso de MAC0350 ministrada em 2024.1. 
 
 ## Funcionalidades principais
 - **Registro de Livros:** Os usuários podem adicionar livros à sua lista, especificando detalhes como título, autor, etc.
