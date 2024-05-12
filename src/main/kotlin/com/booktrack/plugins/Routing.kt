@@ -33,7 +33,9 @@ fun Application.configureRouting() {
                 val author = formParameters.getOrFail("author")
                 val cover = formParameters.getOrFail("cover")
                 val currentPage = formParameters.getOrFail("currentPage").toInt()
-                val newEntry = Book.newEntry(title, author, cover, currentPage, false)
+                val isPage = formParameters.getOrFail("isPage")
+
+                val newEntry = Book.newEntry(title, author, cover, currentPage, isPage, false)
                 books.add(newEntry)
                 call.respondRedirect("/booktrack/${newEntry.id}")
             }
@@ -58,10 +60,13 @@ fun Application.configureRouting() {
                         val author = formParameters.getOrFail("author")
                         val cover = formParameters.getOrFail("cover")
                         val currentPage = formParameters.getOrFail("currentPage").toInt()
+                        val isPage = formParameters.getOrFail("isPage")
+
                         books[index].title = title
                         books[index].author = author
                         books[index].cover = cover
                         books[index].currentPage = currentPage
+                        books[index].isPage = isPage
                         call.respondRedirect("/booktrack/$id")
                     }
                 }
