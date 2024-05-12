@@ -16,14 +16,20 @@
                 <input type="text" name="cover">
             </p>
             <p>
-                <input type="radio" name="isPage" value="Página">
+                <input type="radio" name="isPage" value="Página" required checked>
                 <label for="isPage">Página</label>
-                <input type="radio" name="isPage" value="Capítulo">
+                <input type="radio" name="isPage" value="Capítulo" required>
                 <label for="isPage">Capítulo</label>
             </p>
             <p>
                 <label for="currentPage">Página/Capítulo atual:</label>
                 <input type="number" name="currentPage">
+            </p>
+            <p> Lido?
+                <input type="radio" name="finished" value="false" required checked>
+                <label for="finished">Não</label>
+                <input type="radio" name="finished" value="true" required>
+                <label for="finished">Sim</label>
             </p>
             <p>
                 <input type="submit">
