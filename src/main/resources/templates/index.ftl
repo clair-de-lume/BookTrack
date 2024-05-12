@@ -2,7 +2,7 @@
 <#import "_layout.ftl" as layout />
 <@layout.header>
     <#list books?reverse as book>
-        <div>
+        <div style="display: inline-block">
             <img height="300px" src="${book.cover}" alt="">
             <h3> ${book.title} </h3>
             <p> ${book.author} </p>
