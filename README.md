@@ -27,7 +27,7 @@ git clone https://github.com/clair-de-lume/BookTrack.git
 ```
 4. Rode o projeto com:
 ```
-\gradlew.bat build
+\gradlew.bat run
 ```
 5. Abra o projeto em seu navegador em `http://localhost:3000`
 ## Licença
