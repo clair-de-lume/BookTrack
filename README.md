@@ -11,9 +11,9 @@ BookTrack tem como objetivo criar uma aplicação web que permita aos usuários 
 - **Anotações e Avaliações:** Os usuários podem adicionar anotações e avaliações aos livros que leram.
 
 ## Tecnologias Utilizadas
-- **Frontend:** nada ainda (mas provavelmente JavaScript ou Vue).
-- **Backend:** Kotlin, Ktor, FreeMarker.
-- **Banco de Dados:** nada ainda (mas provavelmente Exposed).
+- **Frontend:** FreeMarker (HTML) e CSS.
+- **Backend:** Kotlin, Ktor.
+- **Banco de Dados:** nada ainda (mas futuramente Exposed).
 
 ## Instalação e Uso
 1. Clone este repositório:
