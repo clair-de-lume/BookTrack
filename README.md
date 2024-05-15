@@ -8,7 +8,8 @@ BookTrack tem como objetivo criar uma aplicação web que permita aos usuários 
 - **Acompanhamento de Progresso:** Os usuários podem marcar a página ou capítulo em que estão atualmente na sua leitura e, ao termina-la, podem marcar o livro como "lido".
 
 ## Funcionalidades extras (backlog)
-- **Anotações e Avaliações:** Os usuários podem adicionar anotações e avaliações aos livros que leram.
+- **Anotações:** Os usuários podem adicionar anotações aos livros que leram.
+- **Avaliações:** Os usuários podem adicionar notas de 1 a 5 para os livros.
 
 ## Tecnologias Utilizadas
 - **Frontend:** FreeMarker (HTML) e CSS.
