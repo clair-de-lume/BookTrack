@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'bugaki'; /* Name your font family */
+    src: url('../static/Bugaki.ttf');
+}
+
+body {
+    background-color: #690000;
+    color: white;
+    text-align: justify-all;
+    font-family: sans-serif;
+}
+
+.header {
+    padding: 10px 0 5px 10px;
+    font-family: bugaki, sans-serif;
+}
+
+.drawer{
+    background-color: black;
+    color: white;
+    position: absolute;
+    height: 100vw;
+    width: 25%;
+    top: 0;
+    left: -25%;
+
+
+    img{
+        rotate: 90deg;
+
+    }
+}
