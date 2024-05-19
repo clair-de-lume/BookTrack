@@ -6,7 +6,6 @@
 <head>
     <title>BookTrack</title>
 
-
     <@layout.page_title />
 </head>
 

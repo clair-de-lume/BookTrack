@@ -15,6 +15,21 @@ body {
     font-family: bugaki, sans-serif;
 }
 
+.pagina {
+    color: #690000;
+    background-color: white;
+    margin-right: 3px;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.fa {
+    color: #690000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 100px;
+}
+
 .drawer{
     background-color: black;
     color: white;
