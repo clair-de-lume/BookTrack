@@ -34,17 +34,15 @@
 <#macro page_body>
     <hr>
     <#list books?reverse as book>
-        <div style="display: inline-block; text-align: center">
+        <div class="livros">
             <img height="300px" src="${book.cover}" alt="">
-            <h3 style="margin: 0 0 0 0"> ${book.title} </h3>
-            <p style="opacity: 0.5; margin: 0 0 0 0"> ${book.author} </p>
+            <h3 class="titulo"> ${book.title} </h3>
+            <p class="autor"> ${book.author} </p>
 
             <div style="display: inline-flex">
                 <p class="pagina"> ${book.messageStatus} </p>
-                <a style="align-content: center" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
+                <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
-
-
         </div>
     </#list>
     <hr>

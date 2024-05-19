@@ -15,12 +15,31 @@ body {
     font-family: bugaki, sans-serif;
 }
 
+.livros {
+    display: inline-block;
+    text-align: center;
+    padding: 0 50px 50px 0
+}
+
+.titulo {
+    margin: 0 0 0 0;
+}
+
+.autor {
+    opacity: 0.5;
+    margin: 0 0 0 0
+}
+
 .pagina {
     color: #690000;
     background-color: white;
     margin-right: 3px;
     padding: 5px;
     border-radius: 50px;
+}
+
+.editarLivro {
+    align-content: center;
 }
 
 .fa {
