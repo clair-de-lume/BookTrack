@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'bugaki'; /* Name your font family */
+    src: url('../static/Bugaki.ttf');
+}
+
+body {
+    background-color: #690000;
+    color: white;
+    text-align: justify-all;
+    font-family: sans-serif;
+}
+
+.header {
+    padding: 10px 0 5px 10px;
+    font-family: bugaki, sans-serif;
+}
+
+.livros {
+    display: inline-block;
+    text-align: center;
+    padding: 0 50px 50px 0
+}
+
+.titulo {
+    margin: 0 0 0 0;
+}
+
+.autor {
+    opacity: 0.5;
+    margin: 0 0 0 0
+}
+
+.pagina {
+    color: #690000;
+    background-color: white;
+    margin-right: 3px;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.editarLivro {
+    align-content: center;
+}
+
+.fa {
+    color: #690000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 100px;
+}
+
+.drawer{
+    background-color: black;
+    color: white;
+    position: absolute;
+    height: 100vw;
+    width: 25%;
+    top: 0;
+    left: -25%;
+
+
+    img{
+        rotate: 90deg;
+
+    }
+}
