@@ -7,8 +7,8 @@
 
 <#macro page_header>
     <div class="header">
-        <img style="display: inline-block" height="50px" src="/static/booktrack_icon.png" alt="">
-        <h1 style="display: inline-block; text-align: left">BookTrack</h1>
+        <img class="icon" src="/static/booktrack_icon.png" alt="">
+        <h1 class="title">BookTrack</h1>
     </div>
 </#macro>
 

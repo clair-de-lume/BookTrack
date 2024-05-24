@@ -15,6 +15,16 @@ body {
     font-family: bugaki, sans-serif;
 }
 
+.icon {
+    display: inline-block;
+    height: 50px;
+}
+
+.title {
+    display: inline-block;
+    text-align: left;
+}
+
 .livros {
     display: inline-block;
     text-align: center;
