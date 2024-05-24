@@ -10,10 +10,11 @@
         <img class="icon" src="/static/booktrack_icon.png" alt="">
         <h1 class="title">BookTrack</h1>
     </div>
+    <hr>
 </#macro>
 
 <#macro page_body>
-    <hr>
+
     <#list books?reverse as book>
         <div class="livros">
             <img height="300px" src="${book.cover}" alt="">
