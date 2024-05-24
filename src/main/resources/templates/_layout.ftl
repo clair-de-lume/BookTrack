@@ -115,3 +115,18 @@
         <a href="/">Voltar para página inicial</a>
     </p>
 </#macro>
+
+<#macro show_book>
+    <div>
+        <img height="300px" src="${book.cover}" alt="">
+        <h3> ${book.title} </h3>
+        <p> ${book.author} </p>
+        <p> ${book.messageStatus} </p>
+    </div>
+    <p>
+        <a href="/booktrack/${book.id}/edit">Editar livro</a>
+    </p>
+    <p>
+        <a href="/">Voltar para página inicial</a>
+    </p>
+</#macro>

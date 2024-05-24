@@ -1,16 +1,15 @@
 <#-- @ftlvariable name="book" type="com.booktrack.models.Book" -->
 <#import "_layout.ftl" as layout />
-<@layout.header>
-    <div>
-        <img height="300px" src="${book.cover}" alt="">
-        <h3> ${book.title} </h3>
-        <p> ${book.author} </p>
-        <p> ${book.messageStatus} </p>
-    </div>
-    <p>
-        <a href="/booktrack/${book.id}/edit">Editar livro</a>
-    </p>
-    <p>
-        <a href="/">Voltar para página inicial</a>
-    </p>
-</@layout.header>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BookTrack</title>
+        <@layout.page_title />
+    </head>
+
+    <body>
+        <@layout.page_header />
+        <@layout.show_book />
+    </body>
+</html>
