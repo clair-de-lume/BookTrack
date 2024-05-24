@@ -24,6 +24,7 @@ body {
 .title {
     display: inline-block;
     text-align: left;
+    color: white;
 }
 
 .livros {
