@@ -7,8 +7,10 @@
 
 <#macro page_header>
     <div class="header">
-        <img class="icon" src="/static/booktrack_icon.png" alt="">
-        <h1 class="title">BookTrack</h1>
+        <a href="/booktrack">
+            <img class="icon" src="/static/booktrack_icon.png" alt="">
+            <h1 class="title">BookTrack</h1>
+        </a>
     </div>
     <hr>
 </#macro>
