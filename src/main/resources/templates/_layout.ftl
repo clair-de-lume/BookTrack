@@ -1,6 +1,6 @@
 <#macro page_title>
     <title>BookTrack</title>
-    <link rel="stylesheet" href="/static/teste.css"/>
+    <link rel="stylesheet" href="/static/main.css"/>
     <link rel="icon" type="image/x-icon" href="/static/booktrack_icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </#macro>
