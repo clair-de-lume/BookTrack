@@ -34,7 +34,7 @@ fun Application.configureRouting() {
                 val cover = formParameters.getOrFail("cover")
                 val currentPage = formParameters.getOrFail("currentPage").toInt()
                 val isPage = formParameters.getOrFail("isPage")
-                val messageStatus = isPage + "${currentPage}"
+                val messageStatus = isPage + " ${currentPage}"
 
                 val newEntry = Book.newEntry(title, author, cover, currentPage, isPage, false, messageStatus)
                 books.add(newEntry)
