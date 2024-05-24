@@ -1,22 +1,3 @@
-<#macro header>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>BookTrack</title>
-        <link rel="stylesheet" href="/static/teste.css"/>
-    </head>
-
-    <body>
-        <div class="header">
-            <img style="display: inline-block" height="50px" src="/static/Open_Book_icon.png" alt="">
-            <h1 style="display: inline-block; text-align: left">BookTrack</h1>
-        </div>
-
-    <#nested>
-    </body>
-    </html>
-</#macro>
-
 <#macro page_title>
     <title>BookTrack</title>
     <link rel="stylesheet" href="/static/teste.css"/>
