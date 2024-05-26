@@ -34,8 +34,8 @@
         </div>
     </#list>
     <hr>
-    <p>
-        <a href="/booktrack/new">Adicionar novo livro</a>
+    <p style="text-align: center">
+        <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
     </p>
 </#macro>
 
@@ -96,8 +96,9 @@
             </p>
 
         </form>
-        <p>
-            <a href="/">Voltar para página inicial</a>
+
+        <p style="text-align: center">
+            <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
         </p>
     </div>
 </#macro>
@@ -163,8 +164,8 @@
                 </p>
             </div>
         </form>
-    <p>
-        <a href="/">Voltar para página inicial</a>
+    <p style="text-align: center">
+        <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
     </p>
 </#macro>
 
