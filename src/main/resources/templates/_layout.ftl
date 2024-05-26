@@ -35,7 +35,7 @@
     </#list>
     <hr>
     <p style="text-align: center">
-        <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
+        <a class="pagina" style="text-decoration: none" href="/booktrack/new">Adicionar novo livro</a>
     </p>
 </#macro>
 
