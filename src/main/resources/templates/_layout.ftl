@@ -28,7 +28,7 @@
             <p class="autor"> ${book.author} </p>
 
             <div style="display: inline-flex">
-                <p class="pagina"> ${book.messageStatus} </p>
+                <p class="pagina"> Página ${book.currentPage} </p>
                 <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
         </div>
@@ -172,10 +172,14 @@
 <#macro show_book>
     <div style="text-align: center">
         <div>
-            <img height="300px" src="${book.cover}" alt="">
+            <#if book.cover == "">
+                <img height="150px" src="/static/booktrack_icon.png" alt="">
+            <#else>
+                <img height="300px" src="${book.cover}" alt="">
+            </#if>
             <h3> ${book.title} </h3>
             <p> ${book.author} </p>
-            <p> ${book.messageStatus} </p>
+            <p> Página ${book.currentPage} </p>
         </div>
 
         <p>
