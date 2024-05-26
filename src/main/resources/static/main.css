@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'bugaki'; /* Name your font family */
-    src: url('../static/Bugaki.ttf');
+    font-family: 'bugaki';
+    src: url('fonts/Bugaki.ttf');
 }
 
 body {
