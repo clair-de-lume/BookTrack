@@ -24,6 +24,7 @@ body {
 .title {
     display: inline-block;
     text-align: left;
+    color: white;
 }
 
 .livros {
@@ -74,4 +75,29 @@ body {
         rotate: 90deg;
 
     }
+}
+
+.Parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.coluna1 {
+    width: 50%;
+    text-align: right;
+    color: white;
+    padding: 0 15px 0 0;
+}
+
+.coluna2 {
+    width: 50%;
+    text-align: justify-all;
+}
+
+.form_text {
+    margin: 1.2em 0 0 0;
+}
+
+.form_input {
+    margin: 1em 0 0 0;
 }
