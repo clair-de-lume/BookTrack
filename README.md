@@ -14,7 +14,7 @@ BookTrack tem como objetivo criar uma aplicação web que permita aos usuários 
 ## Tecnologias Utilizadas
 - **Frontend:** FreeMarker (HTML) e CSS.
 - **Backend:** Kotlin, Ktor.
-- **Banco de Dados:** nada ainda (mas futuramente Exposed).
+- **Banco de Dados:** framework Exposed.
 
 ## Instalação e Uso
 1. Clone este repositório:
@@ -25,6 +25,10 @@ git clone https://github.com/clair-de-lume/BookTrack.git
 3. Em um terminal, faça a build do projeto com o comando:
 ```
 .\gradlew.bat build
+```
+3.1. Para rodar com hot-reload, faça a build do projeto com o comando:
+```
+.\gradlew.bat -t build
 ```
 4. Rode o projeto com:
 ```
