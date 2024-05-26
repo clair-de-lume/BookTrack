@@ -29,9 +29,8 @@
                 <p class="autor"> ${book.author} </p>
             </div>
 
-
             <div style="display: inline-flex">
-                <p class="pagina"> Página ${book.currentPage} </p>
+                <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
                 <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
         </div>

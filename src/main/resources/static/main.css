@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: open-sans;
-    src: url("fonts/OpenSans_Regular.ttf");
+    src: url("fonts/OpenSans-Bold.ttf");
 }
 
 body {
@@ -57,13 +57,18 @@ body {
 .pagina {
     color: #690000;
     background-color: white;
-    margin-right: 3px;
+    margin-right: 5px;
     padding: 5px;
     border-radius: 50px;
+    font-family: open-sans, sans-serif;
+    text-transform: uppercase;
+    width: 100px;
+    letter-spacing: 0.7px;
 }
 
 .editarLivro {
     align-content: center;
+
 }
 
 .fa {
