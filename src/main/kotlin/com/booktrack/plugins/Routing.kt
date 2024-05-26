@@ -1,5 +1,6 @@
 package com.booktrack.plugins
 
+import com.booktrack.dao.dao
 import com.booktrack.models.Book
 import com.booktrack.models.books
 import io.ktor.server.application.*
@@ -20,7 +21,8 @@ fun Application.configureRouting() {
         route("booktrack") {
             get {
                 // Show a list of books
-                call.respond(FreeMarkerContent("index.ftl", mapOf("books" to books)))
+                // call.respond(FreeMarkerContent("index.ftl", mapOf("books" to books)))
+                call.respond(FreeMarkerContent("index.ftl", mapOf("books" to dao.allBooks())))
             }
             get("new") {
                 // Show a page with fields for creating a new book

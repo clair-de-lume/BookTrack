@@ -8,7 +8,7 @@ data class Book(val id: Int,
     val author: String,
     val cover: String,
     val currentPage: Int,
-    var finished: Boolean,)
+    var finished: Boolean)
 
 object Books : Table() {
     val id = integer("id").autoIncrement()
