@@ -19,7 +19,12 @@
 
     <#list books?reverse as book>
         <div class="livros">
-            <img height="300px" src="${book.cover}" alt="">
+            <#if book.cover == "">
+                <img height="150px" src="/static/booktrack_icon.png" alt="">
+            <#else>
+                <img height="300px" src="${book.cover}" alt="">
+            </#if>
+
             <h3 class="titulo"> ${book.title} </h3>
             <p class="autor"> ${book.author} </p>
 
