@@ -41,7 +41,7 @@
 
         <form action="/booktrack" method="post">
             <div class="Parent">
-                <div class="child1">
+                <div class="coluna1">
                         <p class="form_text">
                             <label for="title">Título:</label>
                         </p>
@@ -60,12 +60,12 @@
                         <p class="form_text"> Lido?
                         </p>
                 </div>
-                <div class="child2">
+                <div class="coluna2">
                         <p class="form_input">
-                            <input type="text" name="title">
+                            <input type="text" name="title" required>
                         </p>
                         <p class="form_input">
-                            <input type="text" name="author">
+                            <input type="text" name="author" required>
                         </p>
                         <p class="form_input">
                             <input type="text" name="cover">
@@ -77,7 +77,7 @@
                             <label for="isPage">Capítulo</label>
                         </p>
                         <p class="form_input">
-                            <input type="number" name="currentPage">
+                            <input type="number" name="currentPage" required>
                         </p>
                         <p class="form_input">
                             <input type="radio" name="finished" value="false" required checked>
