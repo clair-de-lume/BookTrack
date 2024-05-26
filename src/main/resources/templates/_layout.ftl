@@ -100,7 +100,7 @@
         </form>
 
         <p style="text-align: center">
-            <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
+            <a class="pagina" style="text-decoration: none" href="/">Voltar</a>
         </p>
     </div>
 </#macro>
@@ -167,7 +167,7 @@
             </div>
         </form>
     <p style="text-align: center">
-        <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
+        <a class="pagina" style="text-decoration: none" href="/">Voltar</a>
     </p>
 </#macro>
 
