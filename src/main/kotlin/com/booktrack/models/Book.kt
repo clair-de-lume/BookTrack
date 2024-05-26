@@ -1,39 +1,24 @@
 package com.booktrack.models
 
-import java.util.concurrent.atomic.AtomicInteger
+import org.jetbrains.exposed.sql.*
 
-class Book
+data class Book(val id: Int,
+    val title: String,
+    val author: String,
+    val cover: String,
+    val currentPage: Int,
+    var isPage: Boolean,
+    var finished: Boolean)
 
-private constructor(val id: Int,
-                    var title: String,
-                    var author: String,
-                    var cover: String,
-                    var currentPage: Int,
-                    var isPage: String,
-                    var finished: Boolean,
-                    var messageStatus: String) {
+object Books : Table() {
+    val id = integer("id").autoIncrement()
+    val title = varchar("title", 128)
+    val author = varchar("author", 128)
+    val cover = varchar("cover", 128)
+    val currentPage = integer("currentPage")
+    var isPage = bool("isPage")
+    val finished = bool("finished")
 
-    fun updateStatus(finished: Boolean, currentPage: Int, isPage: String) {
-        if (finished) { this.messageStatus = "Lido" }
-        else { this.messageStatus = isPage + " $currentPage"
-        }
-        this.finished = finished
-    }
-
-    companion object {
-        private val id = AtomicInteger()
-
-        fun newEntry(title: String, author: String, cover: String, currentPage: Int, isPage: String, finished: Boolean, messageStatus: String) =
-            Book(id.getAndIncrement(), title, author, cover, currentPage, isPage, finished, messageStatus)
-    }
+    override val primaryKey = PrimaryKey(id)
 }
 
-val books = mutableListOf(Book.newEntry(
-    "Piranesi",
-    "Susanna Clarke",
-    "https://m.media-amazon.com/images/I/81C1Y25irCL._AC_UF1000,1000_QL80_.jpg",
-    36,
-    "Página",
-    false,
-    "Página 36"
-))
