@@ -24,11 +24,13 @@
                 <img height="300px" src="${book.cover}" alt="">
             </#if>
 
-            <h3 class="titulo"> ${book.title} </h3>
-            <p class="autor"> ${book.author} </p>
+            <div style="max-width: 200px">
+                <h3 class="titulo"> ${book.title} </h3>
+                <p class="autor"> ${book.author} </p>
+            </div>
 
             <div style="display: inline-flex">
-                <p class="pagina"> Página ${book.currentPage} </p>
+                <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
                 <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
         </div>
@@ -98,7 +100,7 @@
         </form>
 
         <p style="text-align: center">
-            <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
+            <a class="pagina" style="text-decoration: none" href="/">Voltar</a>
         </p>
     </div>
 </#macro>
@@ -165,7 +167,7 @@
             </div>
         </form>
     <p style="text-align: center">
-        <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
+        <a class="pagina" style="text-decoration: none" href="/">Voltar</a>
     </p>
 </#macro>
 
@@ -177,8 +179,8 @@
             <#else>
                 <img height="300px" src="${book.cover}" alt="">
             </#if>
-            <h3> ${book.title} </h3>
-            <p> ${book.author} </p>
+            <h3 class="titulo"> ${book.title} </h3>
+            <p class="autor"> ${book.author} </p>
             <p> Página ${book.currentPage} </p>
         </div>
 

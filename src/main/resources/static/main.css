@@ -1,6 +1,16 @@
 @font-face {
-    font-family: 'bugaki'; /* Name your font family */
-    src: url('../static/Bugaki.ttf');
+    font-family: 'bugaki';
+    src: url('fonts/Bugaki.ttf');
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'open-sans';
+    src: url("fonts/OpenSans-Bold.ttf");
 }
 
 body {
@@ -35,23 +45,30 @@ body {
 
 .titulo {
     margin: 0 0 0 0;
+    font-family: poppins, sans-serif;
 }
 
 .autor {
     opacity: 0.5;
-    margin: 0 0 0 0
+    margin: 0 0 0 0;
+    font-family: poppins, sans-serif;
 }
 
 .pagina {
     color: #690000;
     background-color: white;
-    margin-right: 3px;
-    padding: 5px;
+    margin-right: 5px;
+    padding: 7px;
     border-radius: 50px;
+    font-family: open-sans, sans-serif;
+    text-transform: uppercase;
+    width: 100px;
+    letter-spacing: 0.7px;
 }
 
 .editarLivro {
     align-content: center;
+
 }
 
 .fa {
