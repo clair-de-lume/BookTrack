@@ -136,7 +136,7 @@
         </form>
     </div>
     <div>
-        <form action="/books/${book.id}" method="post">
+        <form action="/booktrack/${book.id}" method="post">
             <p>
                 <input type="submit" name="_action" value="delete">
             </p>
