@@ -1,6 +1,5 @@
 package com.booktrack.models
 
-import java.util.concurrent.atomic.AtomicInteger
 import org.jetbrains.exposed.sql.*
 
 data class Book(val id: Int,

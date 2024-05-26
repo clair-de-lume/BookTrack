@@ -1,8 +1,6 @@
 package com.booktrack.plugins
 
 import com.booktrack.dao.dao
-import com.booktrack.models.Book
-import com.booktrack.models.Books
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 import io.ktor.server.http.content.*
