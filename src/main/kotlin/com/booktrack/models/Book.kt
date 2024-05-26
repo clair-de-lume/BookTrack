@@ -8,6 +8,7 @@ data class Book(val id: Int,
     val author: String,
     val cover: String,
     val currentPage: Int,
+    var isPage: Boolean,
     var finished: Boolean)
 
 object Books : Table() {
@@ -16,6 +17,7 @@ object Books : Table() {
     val author = varchar("author", 128)
     val cover = varchar("cover", 128)
     val currentPage = integer("currentPage")
+    var isPage = bool("isPage")
     val finished = bool("finished")
 
     override val primaryKey = PrimaryKey(id)
