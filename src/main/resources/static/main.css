@@ -8,6 +8,11 @@
     src: url('fonts/Poppins-Regular.ttf');
 }
 
+@font-face {
+    font-family: open-sans;
+    src: url("fonts/OpenSans_Regular.ttf");
+}
+
 body {
     background-color: #690000;
     color: white;
