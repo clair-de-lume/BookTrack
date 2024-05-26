@@ -16,7 +16,6 @@
 </#macro>
 
 <#macro page_body>
-
     <#list books?reverse as book>
         <div class="livros">
             <#if book.cover == "">
@@ -179,10 +178,10 @@
         </div>
 
         <p>
-            <a href="/booktrack/${book.id}/edit">Editar livro</a>
+            <a class="pagina" style="text-decoration: none" href="/booktrack/${book.id}/edit">Editar livro</a>
         </p>
         <p>
-            <a href="/">Voltar para página inicial</a>
+            <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
         </p>
     </div>
 </#macro>
