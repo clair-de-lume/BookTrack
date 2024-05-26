@@ -3,6 +3,11 @@
     src: url('fonts/Bugaki.ttf');
 }
 
+@font-face {
+    font-family: poppins;
+    src: url('fonts/Poppins-Regular.ttf');
+}
+
 body {
     background-color: #690000;
     color: white;
