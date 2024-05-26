@@ -72,6 +72,10 @@ fun Application.configureRouting() {
                         books[index].updateStatus(finished, currentPage, isPage)
                         call.respondRedirect("/booktrack/$id")
                     }
+                    "delete" -> {
+                        books.removeIf { it.id == id }
+                        call.respondRedirect("/")
+                    }
                 }
             }
         }

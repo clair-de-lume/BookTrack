@@ -135,6 +135,13 @@
             </p>
         </form>
     </div>
+    <div>
+        <form action="/booktrack/${book.id}" method="post">
+            <p>
+                <input type="submit" name="_action" value="delete">
+            </p>
+        </form>
+    </div>
     <p>
         <a href="/">Voltar para página inicial</a>
     </p>
