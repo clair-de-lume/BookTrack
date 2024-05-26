@@ -24,8 +24,11 @@
                 <img height="300px" src="${book.cover}" alt="">
             </#if>
 
-            <h3 class="titulo"> ${book.title} </h3>
-            <p class="autor"> ${book.author} </p>
+            <div style="max-width: 200px">
+                <h3 class="titulo"> ${book.title} </h3>
+                <p class="autor"> ${book.author} </p>
+            </div>
+
 
             <div style="display: inline-flex">
                 <p class="pagina"> Página ${book.currentPage} </p>
