@@ -40,11 +40,13 @@ body {
 
 .titulo {
     margin: 0 0 0 0;
+    font-family: poppins, sans-serif;
 }
 
 .autor {
     opacity: 0.5;
-    margin: 0 0 0 0
+    margin: 0 0 0 0;
+    font-family: poppins, sans-serif;
 }
 
 .pagina {

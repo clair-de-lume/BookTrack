@@ -177,8 +177,8 @@
             <#else>
                 <img height="300px" src="${book.cover}" alt="">
             </#if>
-            <h3> ${book.title} </h3>
-            <p> ${book.author} </p>
+            <h3 class="titulo"> ${book.title} </h3>
+            <p class="autor"> ${book.author} </p>
             <p> Página ${book.currentPage} </p>
         </div>
 
