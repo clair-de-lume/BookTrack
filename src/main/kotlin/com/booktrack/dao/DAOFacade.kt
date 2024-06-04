@@ -9,14 +9,14 @@ interface DAOFacade {
                            author: String,
                            cover: String,
                            currentPage: Int,
-                           isPage: Boolean,
+                           page: Boolean,
                            finished: Boolean): Book?
     suspend fun editBook(id: Int,
                          title: String,
                          author: String,
                          cover: String,
                          currentPage: Int,
-                         isPage: Boolean,
+                         page: Boolean,
                          finished: Boolean): Boolean
     suspend fun deleteBook(id: Int): Boolean
 }
