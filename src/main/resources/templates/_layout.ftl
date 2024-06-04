@@ -30,7 +30,11 @@
             </div>
 
             <div style="display: inline-flex">
-                <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
+                <#if book.finished>
+                    <p class="pagina"> <b>Lido</b> </p>
+                <#else>
+                    <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
+                </#if>
                 <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
         </div>
@@ -58,7 +62,7 @@
                             <label for="cover">Capa (link):</label>
                         </p>
                         <p class="form_text">
-                            Selecione modo de acompanhamento de leitura:
+                            <label for="isPage">Selecione modo de acompanhamento de leitura:</label>
                         </p>
                         <p class="form_text">
                             <label for="currentPage">Página/Capítulo atual:</label>
@@ -77,9 +81,9 @@
                             <input type="text" name="cover">
                         </p>
                         <p class="form_input">
-                            <input type="radio" name="isPage" value="Página" required checked>
+                            <input type="radio" name="isPage" value="true" required checked>
                             <label for="isPage">Página</label>
-                            <input type="radio" name="isPage" value="Capítulo" required>
+                            <input type="radio" name="isPage" value="false" required>
                             <label for="isPage">Capítulo</label>
                         </p>
                         <p class="form_input">
@@ -140,9 +144,9 @@
                         <input type="text" name="cover" value="${book.cover}">
                     </p>
                     <p class="form_input">
-                        <input type="radio" name="isPage" value="Página" required checked>
+                        <input type="radio" name="isPage" value="true" required checked>
                         <label for="isPage">Página</label>
-                        <input type="radio" name="isPage" value="Capítulo" required>
+                        <input type="radio" name="isPage" value="false" required>
                         <label for="isPage">Capítulo</label>
                     </p>
                     <p class="form_input">
