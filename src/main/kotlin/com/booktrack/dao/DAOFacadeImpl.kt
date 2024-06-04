@@ -14,7 +14,7 @@ class DAOFacadeImpl : DAOFacade {
         author = row[Books.author],
         cover = row[Books.cover],
         currentPage = row[Books.currentPage],
-        isPage = row[Books.isPage],
+        page = row[Books.page],
         finished = row[Books.finished],
     )
 
@@ -34,7 +34,7 @@ class DAOFacadeImpl : DAOFacade {
         author: String,
         cover: String,
         currentPage: Int,
-        isPage: Boolean,
+        page: Boolean,
         finished: Boolean
     ): Book? = dbQuery {
         val insertStatement = Books.insert {
@@ -42,7 +42,7 @@ class DAOFacadeImpl : DAOFacade {
             it[Books.author] = author
             it[Books.cover] = cover
             it[Books.currentPage] = currentPage
-            it[Books.isPage] = isPage
+            it[Books.page] = page
             it[Books.finished] = finished
         }
         insertStatement.resultedValues?.singleOrNull()?.let(::resultRowToBook)
@@ -53,7 +53,7 @@ class DAOFacadeImpl : DAOFacade {
         author: String,
         cover: String,
         currentPage: Int,
-        isPage: Boolean,
+        page: Boolean,
         finished: Boolean
     ): Boolean = dbQuery {
             Books.update({ Books.id eq id }) {
@@ -61,7 +61,7 @@ class DAOFacadeImpl : DAOFacade {
                 it[Books.author] = author
                 it[Books.cover] = cover
                 it[Books.currentPage] = currentPage
-                it[Books.isPage] = isPage
+                it[Books.page] = page
                 it[Books.finished] = finished
             } > 0
         }

@@ -32,8 +32,10 @@
             <div style="display: inline-flex">
                 <#if book.finished>
                     <p class="pagina"> <b>Lido</b> </p>
-                <#else>
+                <#elseif book.page>
                     <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
+                <#else>
+                    <p class="pagina"> <b>Capítulo ${book.currentPage}</b> </p>
                 </#if>
                 <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
             </div>
@@ -62,7 +64,7 @@
                             <label for="cover">Capa (link):</label>
                         </p>
                         <p class="form_text">
-                            <label for="isPage">Selecione modo de acompanhamento de leitura:</label>
+                            <label for="page">Selecione modo de acompanhamento de leitura:</label>
                         </p>
                         <p class="form_text">
                             <label for="currentPage">Página/Capítulo atual:</label>
@@ -81,10 +83,10 @@
                             <input type="text" name="cover">
                         </p>
                         <p class="form_input">
-                            <input type="radio" name="isPage" value="true" required checked>
-                            <label for="isPage">Página</label>
-                            <input type="radio" name="isPage" value="false" required>
-                            <label for="isPage">Capítulo</label>
+                            <input type="radio" name="page" value="true" required checked>
+                            <label for="page">Página</label>
+                            <input type="radio" name="page" value="false" required>
+                            <label for="page">Capítulo</label>
                         </p>
                         <p class="form_input">
                             <input type="number" name="currentPage" required>
@@ -144,10 +146,10 @@
                         <input type="text" name="cover" value="${book.cover}">
                     </p>
                     <p class="form_input">
-                        <input type="radio" name="isPage" value="true" required checked>
-                        <label for="isPage">Página</label>
-                        <input type="radio" name="isPage" value="false" required>
-                        <label for="isPage">Capítulo</label>
+                        <input type="radio" name="page" value="true" required checked>
+                        <label for="page">Página</label>
+                        <input type="radio" name="page" value="false" required>
+                        <label for="page">Capítulo</label>
                     </p>
                     <p class="form_input">
                         <input type="number" name="currentPage" value="${book.currentPage}" required>
@@ -192,7 +194,13 @@
             </#if>
             <h3 class="titulo"> ${book.title} </h3>
             <p class="autor"> ${book.author} </p>
-            <p> Página ${book.currentPage} </p>
+            <#if book.finished>
+                <p> <b>Lido</b> </p>
+            <#elseif book.page>
+                <p> <b>Página ${book.currentPage}</b> </p>
+            <#else>
+                <p> <b>Capítulo ${book.currentPage}</b> </p>
+            </#if>
         </div>
 
         <p>
