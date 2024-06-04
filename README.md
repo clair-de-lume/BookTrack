@@ -14,7 +14,7 @@ BookTrack tem como objetivo criar uma aplicação web que permita aos usuários 
 ## Tecnologias Utilizadas
 - **Frontend:** FreeMarker (HTML) e CSS.
 - **Backend:** Kotlin, Ktor.
-- **Banco de Dados:** framework Exposed.
+- **Banco de Dados:** PostgreSQL com framework Exposed.
 
 ## Instalação e Uso
 1. Clone este repositório:
