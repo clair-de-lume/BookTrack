@@ -78,8 +78,9 @@ val dao: DAOFacade = DAOFacadeImpl().apply {
                 "Suzanne Clarke",
                 "",
                 50,
-                true,
-                false)
+                page = true,
+                finished = false
+            )
         }
     }
 }
