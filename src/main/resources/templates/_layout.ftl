@@ -153,10 +153,17 @@
                         <input type="number" name="currentPage" value="${book.currentPage}" required>
                     </p>
                     <p class="form_input">
+                    <#if book.finished>
+                        <input type="radio" name="finished" value="false" required>
+                        <label for="finished">Não</label>
+                        <input type="radio" name="finished" value="true" required checked>
+                        <label for="finished">Sim</label>
+                    <#else>
                         <input type="radio" name="finished" value="false" required checked>
                         <label for="finished">Não</label>
                         <input type="radio" name="finished" value="true" required>
                         <label for="finished">Sim</label>
+                    </#if>
                     </p>
                 </div>
             </div>
