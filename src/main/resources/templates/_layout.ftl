@@ -146,10 +146,17 @@
                         <input type="text" name="cover" value="${book.cover}">
                     </p>
                     <p class="form_input">
-                        <input type="radio" name="page" value="true" required checked>
-                        <label for="page">Página</label>
-                        <input type="radio" name="page" value="false" required>
-                        <label for="page">Capítulo</label>
+                        <#if book.page>
+                            <input type="radio" name="page" value="true" required checked>
+                            <label for="page">Página</label>
+                            <input type="radio" name="page" value="false" required>
+                            <label for="page">Capítulo</label>
+                        <#else>
+                            <input type="radio" name="page" value="true" required>
+                            <label for="page">Página</label>
+                            <input type="radio" name="page" value="false" required checked>
+                            <label for="page">Capítulo</label>
+                        </#if>
                     </p>
                     <p class="form_input">
                         <input type="number" name="currentPage" value="${book.currentPage}" required>
