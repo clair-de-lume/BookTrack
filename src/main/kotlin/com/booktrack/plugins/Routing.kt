@@ -33,10 +33,10 @@ fun Application.configureRouting() {
                 val author = formParameters.getOrFail("author")
                 val cover = formParameters.getOrFail("cover")
                 val currentPage = formParameters.getOrFail("currentPage").toInt()
-                val isPage = formParameters.getOrFail("isPage").toBoolean()
+                val page = formParameters.getOrFail("page").toBoolean()
                 val finished = formParameters.getOrFail("finished").toBoolean()
 
-                val book = dao.addNewBook(title, author, cover, currentPage, isPage, finished)
+                val book = dao.addNewBook(title, author, cover, currentPage, page, finished)
                 call.respondRedirect("/booktrack/${book?.id}")
             }
             get("{id}") {
@@ -59,10 +59,10 @@ fun Application.configureRouting() {
                         val author = formParameters.getOrFail("author")
                         val cover = formParameters.getOrFail("cover")
                         val currentPage = formParameters.getOrFail("currentPage").toInt()
-                        val isPage = formParameters.getOrFail("isPage").toBoolean()
+                        val page = formParameters.getOrFail("page").toBoolean()
                         val finished = formParameters.getOrFail("finished").toBoolean()
 
-                        dao.editBook(id, title, author, cover, currentPage, isPage, finished)
+                        dao.editBook(id, title, author, cover, currentPage, page, finished)
                         call.respondRedirect("/booktrack/$id")
                     }
                     "delete" -> {
