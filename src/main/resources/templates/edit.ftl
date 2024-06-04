@@ -1,4 +1,7 @@
 <#-- @ftlvariable name="book" type="com.booktrack.models.Book" -->
+<#--noinspection ALL-->
+<#--noinspection HtmlFormInputWithoutLabel-->
+<#--noinspection ALL-->
 <#import "_layout.ftl" as layout />
 
 <!DOCTYPE html>
@@ -46,15 +49,23 @@
                         </p>
                         <p class="form_input">
                             <#if book.page>
-                                <input type="radio" name="page" value="true" required checked>
-                                <label for="page">Página</label>
-                                <input type="radio" name="page" value="false" required>
-                                <label for="page">Capítulo</label>
+                                <label for="page">
+                                    <input type="radio" name="page" value="true" required checked>
+                                    Página
+                                </label>
+                                <label for="page">
+                                    <input type="radio" name="page" value="false" required>
+                                    Capítulo
+                                </label>
                             <#else>
-                                <input type="radio" name="page" value="true" required>
-                                <label for="page">Página</label>
-                                <input type="radio" name="page" value="false" required checked>
-                                <label for="page">Capítulo</label>
+                                <label for="page">
+                                    <input type="radio" name="page" value="true" required>
+                                    Página
+                                </label>
+                                <label for="page">
+                                    <input type="radio" name="page" value="false" required checked>
+                                    Capítulo
+                                </label>
                             </#if>
                         </p>
                         <p class="form_input">
@@ -62,15 +73,23 @@
                         </p>
                         <p class="form_input">
                             <#if book.finished>
-                                <input type="radio" name="finished" value="false" required>
-                                <label for="finished">Não</label>
-                                <input type="radio" name="finished" value="true" required checked>
-                                <label for="finished">Sim</label>
+                                <label for="finished">
+                                    <input type="radio" name="finished" value="false" required>
+                                    Não
+                                </label>
+                                <label for="finished">
+                                    <input type="radio" name="finished" value="true" required checked>
+                                    Sim
+                                </label>
                             <#else>
-                                <input type="radio" name="finished" value="false" required checked>
-                                <label for="finished">Não</label>
-                                <input type="radio" name="finished" value="true" required>
-                                <label for="finished">Sim</label>
+                                <label for="finished">
+                                    <input type="radio" name="finished" value="false" required checked>
+                                    Não
+                                </label>
+                                <label for="finished">
+                                    <input type="radio" name="finished" value="true" required>
+                                    Sim
+                                </label>
                             </#if>
                         </p>
                     </div>

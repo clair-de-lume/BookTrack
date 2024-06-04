@@ -1,3 +1,4 @@
+<#--noinspection HtmlFormInputWithoutLabel-->
 <#import "_layout.ftl" as layout />
 
 <!DOCTYPE html>
@@ -45,19 +46,27 @@
                             <input type="text" name="cover">
                         </p>
                         <p class="form_input">
-                            <input type="radio" name="page" value="true" required checked>
-                            <label for="page">Página</label>
-                            <input type="radio" name="page" value="false" required>
-                            <label for="page">Capítulo</label>
+                            <label for="page">
+                                <input type="radio" name="page" value="true" required checked>
+                                Página
+                            </label>
+                            <label for="page">
+                                <input type="radio" name="page" value="false" required>
+                                Capítulo
+                            </label>
                         </p>
                         <p class="form_input">
                             <input type="number" name="currentPage" required>
                         </p>
                         <p class="form_input">
-                            <input type="radio" name="finished" value="false" required checked>
-                            <label for="finished">Não</label>
-                            <input type="radio" name="finished" value="true" required>
-                            <label for="finished">Sim</label>
+                            <label for="finished">
+                                <input type="radio" name="finished" value="false" required checked>
+                                Não
+                            </label>
+                            <label for="page">
+                                <input type="radio" name="finished" value="true" required>
+                                Sim
+                            </label>
                         </p>
                     </div>
                 </div>
