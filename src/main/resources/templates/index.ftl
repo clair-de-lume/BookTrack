@@ -37,9 +37,6 @@
         </div>
     </#list>
     <hr>
-    <p style="text-align: center">
-        <a class="pagina" style="text-decoration: none" href="/booktrack/new">Adicionar novo livro</a>
-    </p>
 </body>
 </html>
 
