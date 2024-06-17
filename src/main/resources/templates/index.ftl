@@ -14,9 +14,9 @@
     <#list books?reverse as book>
         <div class="livros">
             <#if book.cover == "">
-                <img height="150px" src="/static/booktrack_icon.png" alt="">
+                <a href="/booktrack/${book.id}"><img src="/static/booktrack_icon.png" style="height: 150px"></a>
             <#else>
-                <img height="300px" src="${book.cover}" alt="">
+                <a href="/booktrack/${book.id}"><img src="${book.cover}" style="height: 300px" alt=""></a>
             </#if>
 
             <div style="max-width: 200px">
