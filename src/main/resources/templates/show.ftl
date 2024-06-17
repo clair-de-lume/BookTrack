@@ -20,18 +20,18 @@
                 </#if>
                 <h3 class="titulo"> ${book.title} </h3>
                 <p class="autor"> ${book.author} </p>
-                <#if book.finished>
-                    <p> <b>Lido</b> </p>
-                <#elseif book.page>
-                    <p> <b>Página ${book.currentPage}</b> </p>
-                <#else>
-                    <p> <b>Capítulo ${book.currentPage}</b> </p>
-                </#if>
-            </div>
 
-            <p>
-                <a class="pagina" style="text-decoration: none" href="/booktrack/${book.id}/edit">Editar livro</a>
-            </p>
+                <div style="display: inline-flex">
+                    <#if book.finished>
+                        <p class="pagina"> <b>Lido</b> </p>
+                    <#elseif book.page>
+                        <p class="pagina"> <b>Página ${book.currentPage}</b> </p>
+                    <#else>
+                        <p class="pagina"> <b>Capítulo ${book.currentPage}</b> </p>
+                    </#if>
+                    <a class="editarLivro" href="/booktrack/${book.id}/edit"> <i class="fa fa-pencil-square-o" aria-hidden="true" ></i></a>
+                </div>
+            </div>
             <p style="padding-top: 10px">
                 <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
             </p>
