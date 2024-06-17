@@ -24,6 +24,7 @@ body {
     padding: 10px 0 0 10px;
     font-family: bugaki, sans-serif;
     height: 70px;
+    text-align: left;
 }
 
 .icon {
@@ -62,7 +63,7 @@ body {
     border-radius: 50px;
     font-family: open-sans, sans-serif;
     text-transform: uppercase;
-    width: 100px;
+    width: 120px;
     letter-spacing: 0.7px;
 }
 
@@ -113,6 +114,18 @@ body {
 
 .form_text {
     margin: 1.2em 0 0 0;
+}
+
+.LogoSite {
+    width: 50%;
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+
+.BotaoNovoLivro {
+    width: 50%;
+    text-align: left;
+    padding: 25px 0 0 10px;
 }
 
 .form_input {

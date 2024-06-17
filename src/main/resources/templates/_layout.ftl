@@ -6,11 +6,21 @@
 </#macro>
 
 <#macro page_header>
-    <div class="header">
-        <a href="/booktrack">
-            <img class="icon" src="/static/booktrack_icon.png" alt="">
-            <h1 class="title">BookTrack</h1>
-        </a>
+    <div class="Parent">
+        <div class="LogoSite">
+            <div class="header">
+                <a href="/booktrack">
+                    <img class="icon" src="/static/booktrack_icon.png" alt="">
+                    <h1 class="title">BookTrack</h1>
+                </a>
+            </div>
+        </div>
+        <div class="BotaoNovoLivro">
+            <p style="text-align: right">
+                <a class="pagina" style="text-decoration: none" href="/booktrack/new">Adicionar novo livro</a>
+            </p>
+        </div>
     </div>
+
     <hr>
 </#macro>
