@@ -104,8 +104,8 @@
                     </p>
                 </div>
             </form>
-            <p style="text-align: center">
-                <a class="pagina" style="text-decoration: none" href="/">Voltar</a>
+            <p style="padding-top: 10px; text-align: center">
+                <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
             </p>
         </div>
     </body>

@@ -32,7 +32,7 @@
             <p>
                 <a class="pagina" style="text-decoration: none" href="/booktrack/${book.id}/edit">Editar livro</a>
             </p>
-            <p>
+            <p style="padding-top: 10px">
                 <a class="pagina" style="text-decoration: none" href="/">Voltar para página inicial</a>
             </p>
         </div>
