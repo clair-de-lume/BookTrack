@@ -1,9 +1,5 @@
 package com.booktrack.plugins
 
-import com.booktrack.models.Comment
-import com.booktrack.models.Book
-import com.booktrack.dao.*
-import com.booktrack.dao.DAOFacade
 import com.booktrack.dao.DAOFacadeImpl
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
@@ -12,12 +8,26 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.util.*
+import kotlinx.coroutines.runBlocking
 
 
 fun Application.configureRouting() {
     routing {
         staticResources("/static", "static")
         val dao = DAOFacadeImpl()
+        runBlocking {
+            if (dao.allBooks().isEmpty()) {
+                dao.addNewBook(
+                    "A Redoma de Vidro",
+                    "Sylvia Plath",
+                    "https://m.media-amazon.com/images/I/719UtmEsIIL._AC_UF1000,1000_QL80_.jpg",
+                    50,
+                    page = true,
+                    finished = false
+                )
+                dao.addNewComment(1, "Uma narrativa emocionante.")
+            }
+        }
 
         get("/") {
             call.respondRedirect("booktrack")

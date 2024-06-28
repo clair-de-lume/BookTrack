@@ -121,19 +121,4 @@ class DAOFacadeImpl : DAOFacade {
     override suspend fun deleteAllBookComments(bookId: Int): Boolean = dbQuery {
         Comments.deleteWhere { Comments.bookId eq bookId } > 0
     }
-
-//    val dao: DAOFacade = DAOFacadeImpl().apply {
-//        runBlocking {
-//            if (allBooks().isEmpty()) {
-//                addNewBook(
-//                    "Piranesi",
-//                    "Suzanne Clarke",
-//                    "",
-//                    50,
-//                    page = true,
-//                    finished = false
-//                )
-//            }
-//        }
-//    }
 }
