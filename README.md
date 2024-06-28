@@ -12,9 +12,9 @@ Esse projeto foi criado com apoio das seguintes documentações do Ktor e modifi
 ## Funcionalidades principais
 - **Registro de Livros:** Os usuários podem adicionar livros à sua lista, especificando detalhes como título, autor, etc.
 - **Acompanhamento de Progresso:** Os usuários podem marcar a página ou capítulo em que estão atualmente na sua leitura e, ao termina-la, podem marcar o livro como "lido".
+- - **Comentários:** Os usuários podem adicionar comentários aos livros que estão lendo.
 
 ## Funcionalidades extras (backlog)
-- **Anotações:** Os usuários podem adicionar anotações aos livros que leram.
 - **Avaliações:** Os usuários podem adicionar notas de 1 a 5 para os livros.
 
 ## Tecnologias Utilizadas
