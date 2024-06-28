@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="coluna2">
-                    <h2>Comentários</h2>
+                    <h2 class="comment-title">Comentários</h2>
                         <#list comments as comment>
                             <div class="livros">
                                 <a href="/booktrack/${book.id}/${comment.id}">
