@@ -3,6 +3,12 @@
 ## Descrição do Projeto
 BookTrack tem como objetivo criar uma aplicação web que permita aos usuários acompanhar seu progresso de leitura de livros e histórias em quadrinhos e registrar as suas leituras atuais. Esse projeto é desenvolvido como parte do curso de MAC0350 ministrada em 2024.1. 
 
+### Disclaimer
+Esse projeto foi criado com apoio das seguintes documentações do Ktor e modificado conforme a necessidade:
+- [Create, open and run a new Ktor project](https://ktor.io/docs/server-create-a-new-project.html)
+- [Create a website in Kotlin with Ktor](https://ktor.io/docs/server-create-website.html)
+- [Integrate a database with Kotlin, Ktor, and Exposed](https://ktor.io/docs/server-integrate-database.html)
+
 ## Funcionalidades principais
 - **Registro de Livros:** Os usuários podem adicionar livros à sua lista, especificando detalhes como título, autor, etc.
 - **Acompanhamento de Progresso:** Os usuários podem marcar a página ou capítulo em que estão atualmente na sua leitura e, ao termina-la, podem marcar o livro como "lido".
