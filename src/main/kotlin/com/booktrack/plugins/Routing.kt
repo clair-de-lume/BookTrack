@@ -25,7 +25,6 @@ fun Application.configureRouting() {
         route("booktrack") {
             get {
                 // Show a list of books
-                // call.respond(FreeMarkerContent("index.ftl", mapOf("books" to books)))
                 call.respond(FreeMarkerContent("index.ftl", mapOf("books" to dao.allBooks())))
             }
             get("new") {
@@ -48,7 +47,10 @@ fun Application.configureRouting() {
             get("{id}") {
                 // Show a book with a specific id
                 val id = call.parameters.getOrFail<Int>("id").toInt()
-                call.respond(FreeMarkerContent("show.ftl", mapOf("book" to dao.book(id))))
+
+                print(dao.allBookComments(id))
+                call.respond(FreeMarkerContent("show.ftl", mapOf("book" to dao.book(id),
+                    "comments" to dao.allBookComments(id))))
             }
             get("{id}/edit") {
                 // Show a page with fields for editing a book
@@ -73,7 +75,13 @@ fun Application.configureRouting() {
                     }
                     "delete" -> {
                         dao.deleteBook(id)
+                        dao.deleteAllBookComments(id)
                         call.respondRedirect("/")
+                    }
+                    "comment" -> {
+                        val content = formParameters.getOrFail("content")
+                        dao.addNewComment(id, content)
+                        call.respondRedirect("/booktrack/$id")
                     }
                 }
             }
