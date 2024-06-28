@@ -1,6 +1,10 @@
 package com.booktrack.plugins
 
-import com.booktrack.dao.dao
+import com.booktrack.models.Comment
+import com.booktrack.models.Book
+import com.booktrack.dao.*
+import com.booktrack.dao.DAOFacade
+import com.booktrack.dao.DAOFacadeImpl
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 import io.ktor.server.http.content.*
@@ -9,9 +13,11 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.util.*
 
+
 fun Application.configureRouting() {
     routing {
         staticResources("/static", "static")
+        val dao = DAOFacadeImpl()
 
         get("/") {
             call.respondRedirect("booktrack")
