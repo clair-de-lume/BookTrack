@@ -22,6 +22,9 @@ Esse projeto foi criado com apoio das seguintes documentações do Ktor e modifi
 - **Backend:** Kotlin, Ktor.
 - **Banco de Dados:** PostgreSQL com framework Exposed.
 
+## Documentação do projeto
+A documentação do projeto pode ser encontrada na [Wiki do repositório](https://github.com/clair-de-lume/BookTrack/wiki).
+
 ## Instalação e Uso
 1. Clone este repositório:
 ```
