@@ -128,6 +128,19 @@ body {
     padding: 25px 0 0 10px;
 }
 
+.comentario {
+    color: #690000;
+    background-color: white;
+    margin-right: 5px;
+    padding: 7px;
+    border-radius: 50px;
+    font-family: open-sans, sans-serif;
+}
+
+.comment-title {
+    text-align: center;
+}
+
 .form_input {
     margin: 1em 0 0 0;
 }

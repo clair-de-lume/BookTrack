@@ -1,6 +1,10 @@
 package com.booktrack.plugins
 
-import com.booktrack.dao.dao
+import com.booktrack.models.Comment
+import com.booktrack.models.Book
+import com.booktrack.dao.*
+import com.booktrack.dao.DAOFacade
+import com.booktrack.dao.DAOFacadeImpl
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 import io.ktor.server.http.content.*
@@ -9,9 +13,11 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.util.*
 
+
 fun Application.configureRouting() {
     routing {
         staticResources("/static", "static")
+        val dao = DAOFacadeImpl()
 
         get("/") {
             call.respondRedirect("booktrack")
@@ -19,7 +25,6 @@ fun Application.configureRouting() {
         route("booktrack") {
             get {
                 // Show a list of books
-                // call.respond(FreeMarkerContent("index.ftl", mapOf("books" to books)))
                 call.respond(FreeMarkerContent("index.ftl", mapOf("books" to dao.allBooks())))
             }
             get("new") {
@@ -42,13 +47,42 @@ fun Application.configureRouting() {
             get("{id}") {
                 // Show a book with a specific id
                 val id = call.parameters.getOrFail<Int>("id").toInt()
-                call.respond(FreeMarkerContent("show.ftl", mapOf("book" to dao.book(id))))
+
+                print(dao.allBookComments(id))
+                call.respond(FreeMarkerContent("show.ftl", mapOf("book" to dao.book(id),
+                    "comments" to dao.allBookComments(id))))
             }
             get("{id}/edit") {
                 // Show a page with fields for editing a book
                 val id = call.parameters.getOrFail<Int>("id").toInt()
                 call.respond(FreeMarkerContent("edit.ftl", mapOf("book" to dao.book(id))))
             }
+
+            get("{id}/{commentId}") {
+                // Show a page with fields for editing a comment
+                val id = call.parameters.getOrFail<Int>("id").toInt()
+                val commentId = call.parameters.getOrFail<Int>("commentId").toInt()
+                call.respond(FreeMarkerContent("editComment.ftl", mapOf("book" to dao.book(id), "comment" to dao.comment(commentId))))
+            }
+
+            post("{id}/{commentId}") {
+                // Update a comment
+                val id = call.parameters.getOrFail<Int>("id").toInt()
+                val commentId = call.parameters.getOrFail<Int>("commentId").toInt()
+                val formParameters = call.receiveParameters()
+                when (formParameters.getOrFail("_action")) {
+                    "update" -> {
+                        val content = formParameters.getOrFail("content")
+                        dao.editComment(commentId, content)
+                        call.respondRedirect("/booktrack/$id")
+                    }
+                    "delete" -> {
+                        dao.deleteComment(commentId)
+                        call.respondRedirect("/booktrack/$id")
+                    }
+                }
+            }
+
             post("{id}") {
                 // Update a book
                 val id = call.parameters.getOrFail<Int>("id").toInt()
@@ -67,7 +101,13 @@ fun Application.configureRouting() {
                     }
                     "delete" -> {
                         dao.deleteBook(id)
+                        dao.deleteAllBookComments(id)
                         call.respondRedirect("/")
+                    }
+                    "comment" -> {
+                        val content = formParameters.getOrFail("content")
+                        dao.addNewComment(id, content)
+                        call.respondRedirect("/booktrack/$id")
                     }
                 }
             }
