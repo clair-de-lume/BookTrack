@@ -25,6 +25,14 @@ fun Application.configureRouting() {
                     page = true,
                     finished = false
                 )
+                dao.addNewBook(
+                    "Piranesi",
+                    "Suzanne Clarke",
+                    "",
+                    7,
+                    page = true,
+                    finished = true
+                )
                 dao.addNewComment(1, "Uma narrativa emocionante.")
             }
         }
