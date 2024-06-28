@@ -57,6 +57,32 @@ fun Application.configureRouting() {
                 val id = call.parameters.getOrFail<Int>("id").toInt()
                 call.respond(FreeMarkerContent("edit.ftl", mapOf("book" to dao.book(id))))
             }
+
+            get("{id}/{commentId}") {
+                // Show a page with fields for editing a comment
+                val id = call.parameters.getOrFail<Int>("id").toInt()
+                val commentId = call.parameters.getOrFail<Int>("commentId").toInt()
+                call.respond(FreeMarkerContent("editComment.ftl", mapOf("book" to dao.book(id), "comment" to dao.comment(commentId))))
+            }
+
+            post("{id}/{commentId}") {
+                // Update a comment
+                val id = call.parameters.getOrFail<Int>("id").toInt()
+                val commentId = call.parameters.getOrFail<Int>("commentId").toInt()
+                val formParameters = call.receiveParameters()
+                when (formParameters.getOrFail("_action")) {
+                    "update" -> {
+                        val content = formParameters.getOrFail("content")
+                        dao.editComment(commentId, content)
+                        call.respondRedirect("/booktrack/$id")
+                    }
+                    "delete" -> {
+                        dao.deleteComment(commentId)
+                        call.respondRedirect("/booktrack/$id")
+                    }
+                }
+            }
+
             post("{id}") {
                 // Update a book
                 val id = call.parameters.getOrFail<Int>("id").toInt()

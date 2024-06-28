@@ -71,7 +71,7 @@ class DAOFacadeImpl : DAOFacade {
                 it[Books.page] = page
                 it[Books.finished] = finished
             } > 0
-        }
+    }
 
     override suspend fun deleteBook(id: Int): Boolean = dbQuery {
         Books.deleteWhere { Books.id eq id } > 0
@@ -104,6 +104,18 @@ class DAOFacadeImpl : DAOFacade {
             it[Comments.content] = content
         }
         insertStatement.resultedValues?.singleOrNull()?.let(::resultRowToComment)
+    }
+
+    override suspend fun editComment(id: Int,
+                                  content: String
+    ): Boolean = dbQuery {
+        Comments.update({ Comments.id eq id }) {
+            it[Comments.content] = content
+        } > 0
+    }
+
+    override suspend fun deleteComment(id: Int): Boolean = dbQuery {
+        Comments.deleteWhere { Comments.id eq id } > 0
     }
 
     override suspend fun deleteAllBookComments(bookId: Int): Boolean = dbQuery {

@@ -30,5 +30,8 @@ interface DAOFacade {
     suspend fun comment(id: Int): Comment?
     suspend fun addNewComment(bookId: Int,
                               content: String): Comment?
+    suspend fun editComment(id: Int,
+                         content: String): Boolean
+    suspend fun deleteComment(id: Int): Boolean
     suspend fun deleteAllBookComments(bookId: Int): Boolean
 }
