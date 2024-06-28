@@ -17,7 +17,7 @@ class BookIntegrationTest {
     private val dao: DAOFacade = DAOFacadeImpl()
 
     @Before
-    fun setupTestTables() {
+    fun createTestTable() {
         Database.connect(
             url = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;",
             driver = "org.h2.Driver"
@@ -54,7 +54,7 @@ class BookIntegrationTest {
     }
 
     @After
-    fun destroyTestTables() {
+    fun deleteTestTable() {
         transaction {
             SchemaUtils.drop(Books)
         }
