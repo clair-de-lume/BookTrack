@@ -1,13 +1,19 @@
 package com.booktrack.dao
 
 import com.booktrack.models.Book
-import com.booktrack.dao.DatabaseSingleton.dbQuery
+import com.booktrack.models.Comment
 import com.booktrack.models.Books
+import com.booktrack.models.Comments
+
+import com.booktrack.dao.DatabaseSingleton.dbQuery
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
 class DAOFacadeImpl : DAOFacade {
+    //
+    // BOOK CRUD FUNCTIONS
+    //
     private fun resultRowToBook(row: ResultRow) = Book(
         id = row[Books.id],
         title = row[Books.title],
@@ -69,18 +75,52 @@ class DAOFacadeImpl : DAOFacade {
     override suspend fun deleteBook(id: Int): Boolean = dbQuery {
         Books.deleteWhere { Books.id eq id } > 0
     }
-}
 
-val dao: DAOFacade = DAOFacadeImpl().apply {
-    runBlocking {
-        if(allBooks().isEmpty()) {
-            addNewBook("Piranesi",
-                "Suzanne Clarke",
-                "",
-                50,
-                page = true,
-                finished = false
-            )
-        }
+    //
+    // COMMENT CRUD FUNCTIONS
+    //
+    private fun resultRowToComment(row: ResultRow) = Comment(
+        id = row[Comments.id],
+        bookId = row[Comments.bookId],
+        content = row[Comments.content]
+    )
+
+    override suspend fun allBookComments(bookId: Int): List<Comment> = dbQuery {
+        Comments.select { Comments.bookId eq bookId }.map(::resultRowToComment)
     }
+
+    override suspend fun comment(id: Int): Comment? = dbQuery {
+        Comments
+            .select { Comments.id eq id }
+            .map(::resultRowToComment)
+            .singleOrNull()
+    }
+
+    override suspend fun addNewComment(bookId: Int,
+                                       content: String): Comment? = dbQuery {
+        val insertStatement = Comments.insert {
+            it[Comments.bookId] = bookId
+            it[Comments.content] = content
+        }
+        insertStatement.resultedValues?.singleOrNull()?.let(::resultRowToComment)
+    }
+
+    override suspend fun deleteAllBookComments(bookId: Int): Boolean = dbQuery {
+        Comments.deleteWhere { Comments.bookId eq bookId } > 0
+    }
+
+//    val dao: DAOFacade = DAOFacadeImpl().apply {
+//        runBlocking {
+//            if (allBooks().isEmpty()) {
+//                addNewBook(
+//                    "Piranesi",
+//                    "Suzanne Clarke",
+//                    "",
+//                    50,
+//                    page = true,
+//                    finished = false
+//                )
+//            }
+//        }
+//    }
 }

@@ -3,6 +3,9 @@ package com.booktrack.dao
 import com.booktrack.models.*
 
 interface DAOFacade {
+    //
+    // BOOK CRUD FUNCTIONS
+    //
     suspend fun allBooks(): List<Book>
     suspend fun book(id: Int): Book?
     suspend fun addNewBook(title: String,
@@ -19,4 +22,13 @@ interface DAOFacade {
                          page: Boolean,
                          finished: Boolean): Boolean
     suspend fun deleteBook(id: Int): Boolean
+
+    //
+    // COMMENT CRUD FUNCTIONS
+    //
+    suspend fun allBookComments(bookId: Int): List<Comment>
+    suspend fun comment(id: Int): Comment?
+    suspend fun addNewComment(bookId: Int,
+                              content: String): Comment?
+    suspend fun deleteAllBookComments(bookId: Int): Boolean
 }
